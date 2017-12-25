@@ -29,6 +29,7 @@ apt-get install -yfV            \
   python-software-properties    \
   software-properties-common    \
   sqlite3                       \
+  imagemagick                   \
 
 #  Particular setups
 #  linux-image-extra-$(uname -r) \

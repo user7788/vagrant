@@ -1,8 +1,16 @@
 Virtual Box: Ubuntu 16.04LTS
 
-Bash scripts for setting up development enviroments.
+Vagrantfile 
 
-	Vagrant.configure("2") do |config|
-	  config.vm.provision "shell", path: "https://raw.githubusercontent.com/.../script.sh"
-	end
+MySql, Postgresql, MongoDb with remote connections from host
+
+Node with Nvm
+
+Ruby with Rbenv, Bundler, Rails and Mailcatcher
+
+
+
+
+
+
 
