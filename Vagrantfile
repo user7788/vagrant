@@ -31,4 +31,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "ruby_with_rbenv.sh", privileged: false
   config.vm.provision "shell", inline: "git config --global core.filemode false", privileged: false
   config.vm.provision "shell", inline: "git config --global core.autocrlf true", privileged: false
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/host.pub"
+  config.vm.provision "shell", inline: "cat ~/.ssh/host.pub >> ~/.ssh/authorized_keys", privileged: false
 end
