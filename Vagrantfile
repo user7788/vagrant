@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4096" # set as needed
-    vb.cpus = 2
+    # vb.cpus = 2 #commented due to slow performance
   end
 
   config.vm.provision "shell", path: "ubuntu_setup.sh"
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "node_with_nvm.sh", privileged: false
   config.vm.provision "shell", path: "ruby_with_rbenv.sh", privileged: false
   config.vm.provision "shell", inline: "git config --global core.filemode false", privileged: false
-  config.vm.provision "shell", inline: "git config --global core.autocrlf true", privileged: false
+  config.vm.provision "shell", inline: "git config --global core.autocrlf input", privileged: false
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/host.pub"
   config.vm.provision "shell", inline: "cat ~/.ssh/host.pub >> ~/.ssh/authorized_keys", privileged: false
 end
